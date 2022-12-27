@@ -1,12 +1,13 @@
 version: '3'
 services:
-  php-apache:
-    container_name: php-apache
-    image: tomsik68/xampp:7
+  php:
+    container_name: php-apache-sec1
+    # image: php:7.3-apache
+    build: .
     volumes:
-     - ./php:/www
+      - ./php:/var/www/html/
     ports:
-     - 8000:80
+      - 8000:80
     depends_on:
       - db
   db:
